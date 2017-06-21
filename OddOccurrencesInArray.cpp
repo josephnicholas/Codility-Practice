@@ -4,36 +4,26 @@
 #include <algorithm>
 #include <iostream>
 #include <vector>
-#include <string>
-#include <bitset>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-int solution(int);
+int solution(vector<int> &);
 int main() {
-
-	int num; cin >> num;
-	cout << solution(num) << endl;
+	vector<int> inputNums = { 9, 3, 9, 3, 9, 7, 9 };
+	cout << solution(inputNums) << endl;
 
 	return 0;
 }
-int solution(int N) {
-	string binary = bitset<32>(N).to_string();
-	cout << binary << endl;
-	int countZero = 0;
-	int nTemp = 0;
-	for (int i = 0; i < binary.length(); i++) {
-		if (binary[i] == '1')
+int solution(vector<int> &A) {
+	for (unsigned int i = 0; i < A.size(); ++i)
+	{
+		for (unsigned int j = i + 1;  j < A.size(); ++j)
 		{
-			int j = i;
-			nTemp = countZero;
-			countZero = 0;
-			while (binary[j + 1] != '1' && binary[j + 1] != NULL) {
-				countZero++;
-				j++;
-			}
-			if (nTemp > countZero) {
-				countZero = nTemp;
-				return countZero;
+			if (A[i] == A[j])
+			{
+				cout << i << " == " << j << endl;
+				break;
 			}
 		}
 	}
