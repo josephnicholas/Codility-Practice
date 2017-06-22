@@ -1,6 +1,3 @@
-//
-//	Note: Some test cases failed, need to improve this solution
-//
 #include <algorithm>
 #include <iostream>
 #include <vector>
