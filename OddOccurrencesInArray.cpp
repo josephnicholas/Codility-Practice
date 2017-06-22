@@ -16,17 +16,12 @@ int main() {
 	return 0;
 }
 int solution(vector<int> &A) {
+	int loneNumber = 0;
 	for (unsigned int i = 0; i < A.size(); ++i)
 	{
-		for (unsigned int j = i + 1;  j < A.size(); ++j)
-		{
-			if (A[i] == A[j])
-			{
-				cout << i << " == " << j << endl;
-				break;
-			}
-		}
+		loneNumber ^= A[i];
 	}
-	return 0;
+	
+	return loneNumber;
 }
 
