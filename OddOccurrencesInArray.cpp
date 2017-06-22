@@ -14,9 +14,8 @@ int main() {
 }
 int solution(vector<int> &A) {
 	int loneNumber = 0;
-	for (unsigned int i = 0; i < A.size(); ++i)
-	{
-		loneNumber ^= A[i];
+	for (unsigned int value : A) {
+		loneNumber ^= value;
 	}
 	
 	return loneNumber;
